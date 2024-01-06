@@ -53,14 +53,14 @@ echo "Installing systemd services"
 echo
 
 sudo cp $PROJECT_DIR/systemd/* /etc/systemd/user/
-sudo systemctl --user daemon-reload
+systemctl --user daemon-reload
 
 if [[ $WYOMING_SATELLITE == 1 ]]; then
-    sudo systemctl --user enable wyoming-satellite.service
+    systemctl --user enable wyoming-satellite.service
 fi
 if [[ $SQUEEZELITE == 1 ]]; then
-    sudo systemctl --user enable squeezelite.service
+    systemctl --user enable squeezelite.service
 fi
 if [[ $LIBRESPOT == 1 ]]; then
-    sudo systemctl --user enable librespot.service
+    systemctl --user enable librespot.service
 fi
