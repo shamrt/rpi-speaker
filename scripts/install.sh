@@ -51,10 +51,13 @@ systemctl --user daemon-reload
 
 if [[ $WYOMING_SATELLITE == 1 ]]; then
     systemctl --user enable wyoming-satellite.service
+    systemctl --user start wyoming-satellite.service
 fi
 if [[ $SQUEEZELITE == 1 ]]; then
     systemctl --user enable squeezelite.service
+    systemctl --user start squeezelite.service
 fi
 if [[ $LIBRESPOT == 1 ]]; then
     systemctl --user enable librespot.service
+    systemctl --user start librespot.service
 fi
