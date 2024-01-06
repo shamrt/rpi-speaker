@@ -1,0 +1,11 @@
+[Unit]
+Description=Squeezelite LMS player
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=%h/src/rpi-speaker/squeezelite/start.sh "%u@%H"
+Restart=on-failure
+
+[Install]
+WantedBy=default.target
