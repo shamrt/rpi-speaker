@@ -13,7 +13,7 @@ WYOMING_SATELLITE=$WYOMING_SATELLITE || 1
 SQUEEZELITE=$SQUEEZELITE || 1
 LIBRESPOT=$LIBRESPOT || 0
 
-sudo apt install -y git pulseaudio
+sudo apt install -y pulseaudio
 mkdir -p $HOME/src
 
 # Install Wyoming satellite
