@@ -23,6 +23,11 @@ if [[ $WYOMING_SATELLITE == 1 ]]; then
     if [ ! -d "$HOME/src/wyoming-satellite" ]; then
         git clone https://github.com/rhasspy/wyoming-satellite.git $HOME/src/wyoming-satellite
         cp $PROJECT_DIR/wyoming-satellite/sounds/* $HOME/src/wyoming-satellite/sounds/
+        cd $HOME/src/wyoming-satellite/
+        ./script/setup
+        sudo apt-get install alsa-utils
+        ./.venv/bin/pip3 install 'pysilero-vad==1.0.0'
+        ./.venv/bin/pip3 install 'webrtc-noise-gain==1.2.3'
     fi
 fi
 
