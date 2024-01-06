@@ -2,6 +2,8 @@
 
 set -e
 
+PROJECT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+
 if [ "$EUID" -eq 0 ]
   then echo "Please run as current user"
   exit
@@ -17,6 +19,7 @@ mkdir -p $HOME/src
 # Install Wyoming satellite
 if [[ $WYOMING_SATELLITE == 1 ]]; then
     git clone https://github.com/rhasspy/wyoming-satellite.git src/.
+    cp $PROJECT_DIR/wyoming-satellite/sounds/* $HOME/src/wyoming-satellite/sounds/
 fi
 
 # Install Squeezelite manually (Debian package is dodgy)
