@@ -3,7 +3,7 @@
 set -e
 set -x
 
-PROJECT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+PROJECT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )/.." >/dev/null 2>&1 && pwd )"
 
 if [ "$EUID" -eq 0 ]
   then echo "Please run as current user"
