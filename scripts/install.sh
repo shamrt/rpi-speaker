@@ -18,7 +18,7 @@ mkdir -p $HOME/src
 
 # Install Wyoming satellite
 if [[ $WYOMING_SATELLITE == 1 ]]; then
-    git clone https://github.com/rhasspy/wyoming-satellite.git src/.
+    git clone https://github.com/rhasspy/wyoming-satellite.git $HOME/src/.
     cp $PROJECT_DIR/wyoming-satellite/sounds/* $HOME/src/wyoming-satellite/sounds/
 fi
 
@@ -38,7 +38,7 @@ if [[ $LIBRESPOT == 1 ]]; then
 fi
 
 # Install services
-sudo cp $HOME/src/rpi-speaker/systemd/* /etc/systemd/user/
+sudo cp $PROJECT_DIR/systemd/* /etc/systemd/user/
 sudo systemctl --user daemon-reload
 
 if [[ $WYOMING_SATELLITE == 1 ]]; then
