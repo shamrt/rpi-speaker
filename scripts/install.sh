@@ -18,12 +18,18 @@ mkdir -p $HOME/src
 
 # Install Wyoming satellite
 if [[ $WYOMING_SATELLITE == 1 ]]; then
+    echo
+    echo "Installing Wyoming satellite"
+    echo
     git clone https://github.com/rhasspy/wyoming-satellite.git $HOME/src/.
     cp $PROJECT_DIR/wyoming-satellite/sounds/* $HOME/src/wyoming-satellite/sounds/
 fi
 
 # Install Squeezelite manually (Debian package is dodgy)
 if [[ $SQUEEZELITE == 1 ]]; then
+    echo
+    echo "Installing Squeezelite"
+    echo
     mkdir -p $HOME/src/squeezelite
     cd $HOME/src/squeezelite
     wget https://sourceforge.net/projects/lmsclients/files/squeezelite/linux/squeezelite-pulse-1.9.9.1428-aarch64.tar.gz/download
@@ -33,11 +39,18 @@ fi
 
 # librespot
 if [[ $LIBRESPOT == 1 ]]; then
+    echo
+    echo "Installing librespot"
+    echo
     sudo apt install -y build-essential cargo libpulse-dev
     cargo install librespot --locked
 fi
 
 # Install services
+echo
+echo "Installing systemd services"
+echo
+
 sudo cp $PROJECT_DIR/systemd/* /etc/systemd/user/
 sudo systemctl --user daemon-reload
 
