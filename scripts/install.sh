@@ -21,7 +21,7 @@ mkdir -p $HOME/src
 # Install Wyoming satellite
 if [[ $WYOMING_SATELLITE == 1 ]]; then
     if [ ! -d "$HOME/src/wyoming-satellite" ]; then
-        git clone https://github.com/rhasspy/wyoming-satellite.git $HOME/src/.
+        git clone https://github.com/rhasspy/wyoming-satellite.git $HOME/src/wyoming-satellite
         cp $PROJECT_DIR/wyoming-satellite/sounds/* $HOME/src/wyoming-satellite/sounds/
     fi
 fi
