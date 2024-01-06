@@ -36,8 +36,16 @@ if [[ $SQUEEZELITE == 1 ]]; then
     if [ ! -f "$HOME/src/squeezelite/squeezelite" ]; then
         mkdir -p $HOME/src/squeezelite
         cd $HOME/src/squeezelite
-        wget https://sourceforge.net/projects/lmsclients/files/squeezelite/linux/squeezelite-pulse-1.9.9.1428-aarch64.tar.gz/download
+
+        ARCH=$(uname -m)
+        if [[ $ARCH == "armv7l" ]]; then
+            wget https://sourceforge.net/projects/lmsclients/files/squeezelite/linux/squeezelite-pulse-1.9.9.1392-armhf.tar.gz/download
+        elif [[ $ARCH == "aarch64" ]]; then
+            wget https://sourceforge.net/projects/lmsclients/files/squeezelite/linux/squeezelite-pulse-1.9.9.1428-aarch64.tar.gz/download
+        fi
         tar -xf download
+        rm download
+
         cd $HOME
     fi
 fi
