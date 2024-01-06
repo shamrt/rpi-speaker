@@ -2,6 +2,11 @@
 
 set -e
 
+if [ "$EUID" -eq 0 ]
+  then echo "Please run as current user"
+  exit
+fi
+
 WYOMING_SATELLITE=$WYOMING_SATELLITE || 1
 SQUEEZELITE=$SQUEEZELITE || 1
 LIBRESPOT=$LIBRESPOT || 0
