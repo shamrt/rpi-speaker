@@ -25,8 +25,8 @@ if [[ $WYOMING_SATELLITE == 1 ]]; then
         cp $PROJECT_DIR/wyoming-satellite/sounds/* $HOME/src/wyoming-satellite/sounds/
     fi
     cd $HOME/src/wyoming-satellite/
+    sudo apt-get install python3-venv alsa-utils
     ./script/setup
-    sudo apt-get install alsa-utils
     ./.venv/bin/pip3 install 'pysilero-vad==1.0.0'
     ./.venv/bin/pip3 install 'webrtc-noise-gain==1.2.3'
 fi
